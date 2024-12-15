@@ -18,11 +18,13 @@ add.addEventListener("click", () => {
   outDiv.innerHTML = "";
   arr.forEach((item) => {
     let oName = document.createElement("p");
-    oName.innerText = item.name;
-
+    item.name.length === 0
+      ? (oName.innerText = "Not Defined")
+      : (oName.innerText = item.name);
     let oDate = document.createElement("p");
-    oDate.innerText = item.date;
-
+    item.date.length === 0
+      ? (oDate.innerText = "Not Defined")
+      : (oDate.innerText = item.date);
     let del = document.createElement("button");
     del.innerText = item.delete;
     del.addEventListener("click", () => {
